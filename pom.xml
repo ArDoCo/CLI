@@ -5,12 +5,11 @@
   <parent>
     <groupId>io.github.ardoco.core</groupId>
     <artifactId>parent</artifactId>
-    <version>0.7.0</version>
+    <version>0.6.0</version>
   </parent>
 
   <groupId>io.github.ardoco.core</groupId>
   <artifactId>cli</artifactId>
-  <version>${revision}</version>
   <packaging>jar</packaging>
   <name>ArDoCo CLI</name>
   <description>The goal of this project is to connect architecture documentation and models while identifying missing
@@ -75,10 +74,10 @@
   <properties>
     <project.source.encoding>UTF-8</project.source.encoding>
 
-    <sonar.projectKey>ArDoCo_Core</sonar.projectKey>
-    <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+    <sonar.projectKey>ArDoCo_CLI</sonar.projectKey>
     <sonar.organization>ardoco</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <argLine>-Xmx4g -Xss256m</argLine>
   </properties>
 
@@ -146,6 +145,13 @@
             <goals>
               <goal>prepare-agent</goal>
             </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
+            <phase>package</phase>
           </execution>
         </executions>
       </plugin>
