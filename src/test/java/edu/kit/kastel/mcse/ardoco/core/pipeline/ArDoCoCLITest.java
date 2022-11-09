@@ -4,21 +4,15 @@ package edu.kit.kastel.mcse.ardoco.core.pipeline;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class ArDoCoCLITest {
     private static final String OUTPUT = "src/test/resources/testout";
-    private static final String TEXT = "../tests/src/test/resources/benchmark/teastore/text_2020/teastore.txt";
-    private static final String MODEL = "../tests/src/test/resources/benchmark/teastore/model_2020/pcm/teastore.repository";
-    private static final String MODEL_UML = "../tests/src/test/resources/benchmark/teastore/model_2020/uml/teastore.uml";
-    private static final String NAME = "teastore";
-
-    @BeforeAll
-    public static void beforeAll() {
-        System.setProperty("log4j.configurationFile", "src/main/resources/log4j2.xml");
-    }
+    private static final String TEXT = "./src/test/resources/teammates/teammates.txt";
+    private static final String MODEL = "./src/test/resources/teammates/teammates.repository";
+    private static final String MODEL_UML = "./src/test/resources/teammates/teammates.uml";
+    private static final String NAME = "teammates";
 
     @Test
     @DisplayName("Testing CLI with provided text file")
