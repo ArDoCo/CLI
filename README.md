@@ -31,7 +31,7 @@ The models can be provided as PCM (repository) or UML.
 Additionally, you can provide a (java) code model created using the [CodeModelExtractors](https://github.com/ArDoCo/CodeModelExtractors).
 Text should be a plain text file.
 
-## Acknowledgments
+## Acknowledgements
 
 This work was supported by funding from the topic Engineering Secure Systems of the Helmholtz Association (HGF) and by
 KASTEL Security Research Labs (46.23.01).
