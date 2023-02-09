@@ -22,7 +22,7 @@ class ArDoCoCLITest {
 
         Assertions.assertNotNull(runner);
 
-        var additionalConfigs = ArDoCo.loadAdditionalConfigs(runner.additionalConfigs());
+        var additionalConfigs = ConfigurationHelper.loadAdditionalConfigs(runner.additionalConfigs());
         ArDoCo arDoCo = ArDoCo.getInstance(runner.name());
         try {
             arDoCo.definePipeline(runner.inputText(), runner.inputModelArchitecture(), runner.inputArchitectureModelType(), runner.inputModelCode(),
@@ -41,7 +41,7 @@ class ArDoCoCLITest {
 
         Assertions.assertNotNull(runner);
 
-        var additionalConfigs = ArDoCo.loadAdditionalConfigs(runner.additionalConfigs());
+        var additionalConfigs = ConfigurationHelper.loadAdditionalConfigs(runner.additionalConfigs());
         ArDoCo arDoCo = ArDoCo.getInstance(runner.name());
         try {
             arDoCo.definePipeline(runner.inputText(), runner.inputModelArchitecture(), runner.inputArchitectureModelType(), runner.inputModelCode(),
