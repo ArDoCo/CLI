@@ -19,9 +19,8 @@ the [KIT](https://www.kit.edu).
 usage: java -jar ardoco-cli.jar
 -h,--help                        show this message
 -c,--conf <arg>                  path to the additional config file (overwriting default properties)
--ma,--model-architecture <arg>   path to the architecture model 
+-ma,--model-architecture <arg>   path to the architecture model
 -mt,--archtype <arg>			 type of the architecture model (PCM or UML)
--mc,--model-code <arg>           path to the java code model (optional)
 -n,--name <arg>                  name of the project/run
 -t,--text <arg>                  path to the input text file of the software architecture documentation
 -o,--out <arg>                   path to the output directory
