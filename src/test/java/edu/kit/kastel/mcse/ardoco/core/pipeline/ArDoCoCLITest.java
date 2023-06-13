@@ -1,11 +1,11 @@
 /* Licensed under MIT 2022-2023. */
 package edu.kit.kastel.mcse.ardoco.core.pipeline;
 
-import java.io.IOException;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import edu.kit.kastel.mcse.ardoco.core.api.models.ArchitectureModelType;
 
 class ArDoCoCLITest {
     private static final String OUTPUT = "src/test/resources/testout";
@@ -21,16 +21,7 @@ class ArDoCoCLITest {
         var runner = ArDoCoCLI.parseCommandLineAndBuildArDoCoRunner(args);
 
         Assertions.assertNotNull(runner);
-
-        var additionalConfigs = ConfigurationHelper.loadAdditionalConfigs(runner.additionalConfigs());
-        ArDoCo arDoCo = ArDoCo.getInstance(runner.name());
-        try {
-            arDoCo.definePipeline(runner.inputText(), runner.inputModelArchitecture(), runner.inputArchitectureModelType(), runner.inputModelCode(),
-                    additionalConfigs);
-        } catch (IOException e) {
-            Assertions.fail("Could not define ArDoCo");
-        }
-        Assertions.assertNotNull(arDoCo);
+        Assertions.assertTrue(runner.isSetUp());
     }
 
     @Test
@@ -40,16 +31,7 @@ class ArDoCoCLITest {
         var runner = ArDoCoCLI.parseCommandLineAndBuildArDoCoRunner(args);
 
         Assertions.assertNotNull(runner);
-
-        var additionalConfigs = ConfigurationHelper.loadAdditionalConfigs(runner.additionalConfigs());
-        ArDoCo arDoCo = ArDoCo.getInstance(runner.name());
-        try {
-            arDoCo.definePipeline(runner.inputText(), runner.inputModelArchitecture(), runner.inputArchitectureModelType(), runner.inputModelCode(),
-                    additionalConfigs);
-        } catch (IOException e) {
-            Assertions.fail("Could not define ArDoCo");
-        }
-        Assertions.assertNotNull(arDoCo);
+        Assertions.assertTrue(runner.isSetUp());
     }
 
     @Test
