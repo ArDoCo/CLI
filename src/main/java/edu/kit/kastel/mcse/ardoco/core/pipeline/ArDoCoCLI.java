@@ -3,7 +3,8 @@ package edu.kit.kastel.mcse.ardoco.core.pipeline;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -111,7 +112,7 @@ public final class ArDoCoCLI {
             return null;
         }
 
-        Map<String, String> configs = additionalConfigs == null ? Map.of() : ConfigurationHelper.loadAdditionalConfigs(additionalConfigs);
+        SortedMap<String, String> configs = additionalConfigs == null ? new TreeMap<>() : ConfigurationHelper.loadAdditionalConfigs(additionalConfigs);
 
         var runner = new ArDoCoForInconsistencyDetection(name);
         runner.setUp(inputText, inputModelArchitecture, inputArchitectureModelType, configs, outputDir);
